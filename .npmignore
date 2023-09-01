@@ -1,2 +1,7 @@
 demo.gif
 README.md
+dist/
+.editorconfig
+vite.config.ts
+tsconfig.json
+.gitignore
