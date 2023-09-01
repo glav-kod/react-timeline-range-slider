@@ -1,5 +1,6 @@
 {
-  "name": "react-timeline-range-slider",
+  "name": "@glav-kod/react-timeline-range-slider",
+  "private": false,
   "version": "2.0.0",
   "description": "Time Slider component for React",
   "author": "GlavKod",
