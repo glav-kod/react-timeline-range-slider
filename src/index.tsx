@@ -121,17 +121,20 @@ export default function TimeRange(props: Props) {
   function onChange(newTime: ReadonlyArray<number>) {
     const formattedNewTime = formatInterval(newTime);
 
-    if (onChangeCallback) {
-      onChangeCallback(formattedNewTime);
-    }
+    onChangeCallback(formattedNewTime);
   }
 
   function checkIsSelectedIntervalNotValid([start, end]: ReadonlyArray<number>, source: SliderItem, target: SliderItem) {
     const {value: startInterval} = source;
     const {value: endInterval} = target;
 
-    if (startInterval > start && endInterval <= end || startInterval >= start && endInterval < end) return true;
-    if (start >= startInterval && end <= endInterval) return true;
+    if (startInterval > start && endInterval <= end || startInterval >= start && endInterval < end) {
+      return true;
+    }
+
+    if (start >= startInterval && end <= endInterval) {
+      return true;
+    }
 
     const isStartInBlockedInterval = start > startInterval && start < endInterval && end >= endInterval;
     const isEndInBlockedInterval = end < endInterval && end > startInterval && start <= startInterval;
@@ -140,14 +143,10 @@ export default function TimeRange(props: Props) {
   }
 
   function onUpdate(newTime: ReadonlyArray<number>) {
-    if (!onUpdateCallback) {
-      return;
-    }
-
     const formattedNewTime = formatInterval(newTime);
 
     if (formattedBlockedIntervals?.length) {
-      const isValuesNotValid = formattedBlockedIntervals.some(({source, target}) => checkIsSelectedIntervalNotValid(newTime, source, target));
+      const isValuesNotValid = formattedBlockedIntervals.some((x) => checkIsSelectedIntervalNotValid(newTime, x.source, x.target));
 
       onUpdateCallback({
         error: isValuesNotValid,
@@ -181,8 +180,16 @@ export default function TimeRange(props: Props) {
         domain={domain}
         onUpdate={onUpdate}
         onChange={onChange}
-        values={[Number(selectedInterval.start), Number(selectedInterval.end)]}
-        rootStyle={{position: "relative", width: "100%"}}
+        values={
+          [
+            Number(selectedInterval.start),
+            Number(selectedInterval.end)
+          ]
+        }
+        rootStyle={{
+          position: "relative",
+          width: "100%"
+        }}
       >
         <Rail>
           {({getRailProps}) => <SliderRail getRailProps={getRailProps}/>}
@@ -203,17 +210,19 @@ export default function TimeRange(props: Props) {
         </Handles>
 
         <Tracks left={false} right={false}>
-          {({tracks, getTrackProps}) => (<>
-            {tracks?.map(({id, source, target}) =>
-              <Track
-                error={error}
-                key={id}
-                source={source}
-                target={target}
-                getTrackProps={getTrackProps}
-              />
-            )}
-          </>)}
+          {({tracks, getTrackProps}) => (
+            <>
+              {tracks?.map(({id, source, target}) =>
+                <Track
+                  error={error}
+                  key={id}
+                  source={source}
+                  target={target}
+                  getTrackProps={getTrackProps}
+                />
+              )}
+            </>
+          )}
         </Tracks>
 
         {formattedBlockedIntervals?.length && (
