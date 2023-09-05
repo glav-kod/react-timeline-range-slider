@@ -1,6 +1,6 @@
 ### React timeline range slider
 
-![demo png](../../demo.png)
+![demo png](https://github.com/glav-kod/react-timeline-range-slider/blob/main/demo.png)
 
 ### Installation
 
