@@ -1,0 +1,95 @@
+.react_time_range__time_range_container {
+    padding: 0 55px 1px;
+    background-color: #F5F7FA;
+    height: 30px;
+}
+
+.react_time_range__keyboard_handle {
+    position: absolute;
+    z-index: 3;
+    width: 24px;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.react_time_range__track {
+    position: absolute;
+    height: 100%;
+    cursor: pointer;
+    transition: background-color .15s ease-in-out, border-color .15s ease;
+    z-index: 3;
+}
+
+.react_time_range__rail__outer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.react_time_range__rail__inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-color: #F5F7FA;
+    border-bottom: 1px solid #C8CACC;
+}
+
+.react_time_range__handle_wrapper {
+    position: absolute;
+    -webkit-tap-highlight-color: #000000;
+    z-index: 6;
+    width: 24px;
+    right: 50%;
+    transform: translate(-50%, 0);
+    height: 100%;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.react_time_range__handle_container {
+    position: absolute;
+    display: flex;
+    transform: translate(-50%, 0);
+    z-index: 4;
+    width: 10px;
+    height: 100%;
+    border-radius: 4px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+    background-color: #FFFFFF;
+}
+
+.react_time_range__handle_marker {
+    width: 2px;
+    height: 12px;
+    margin: auto;
+    border-radius: 2px;
+    background-color: #3492dc;
+    transition: background-color .2s ease;
+}
+
+.react_time_range__tick_marker, .react_time_range__tick_marker__large {
+    position: absolute;
+    width: 1px;
+    height: 5px;
+    bottom: 0;
+    background-color: #C8CACC;
+    z-index: 2;
+}
+
+.react_time_range__tick_marker__large {
+    height: 7px;
+}
+
+.react_time_range__tick_label {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    font-size: 13px;
+    text-align: center;
+    z-index: 2;
+    color: #77828C;
+    font-family: sans-serif;
+}

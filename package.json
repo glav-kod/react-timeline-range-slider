@@ -1,57 +1,27 @@
 {
-  "name": "@glav-kod/react-timeline-range-slider",
-  "private": false,
-  "version": "2.0.5",
-  "description": "Time Slider component for React",
-  "author": "GlavKod",
-  "main": "src/index.tsx",
-  "type": "module",
+  "name": "@glav-kod/react-timeline-range-slider-root",
+  "version": "1.0.0",
+  "private": true,
   "license": "MIT",
-  "homepage": "https://github.com/glav-kod/react-timeline-range-slider",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/glav-kod/react-timeline-range-slider"
-  },
-  "keywords": [
-    "react-component",
-    "react",
-    "slider",
-    "component",
-    "time-picker",
-    "react-slider",
-    "range-slider",
-    "range"
-  ],
+  "type": "module",
   "scripts": {
-    "build": "tsc && vite build"
+    "build": "yarn && nx run-many --target=build",
+    "clean": "nx reset && node scripts/clean-modules.js"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "dependencies": {
-    "react": "^17.0.2",
-    "d3-scale": "^4.0.2",
-    "date-fns": "^2.29.3",
-    "react-compound-slider": "^3.3.1"
+  "workspaces": [
+    "workspaces/**/*"
+  ],
+  "optionalDependencies": {
+    "esbuild-linux-64": "0.14.54",
+    "esbuild-windows-64": "0.14.54"
   },
   "devDependencies": {
-    "@types/d3-scale": "^4.0.4",
-    "@types/node": "^20.5.7",
-    "@types/react": "^18.2.21",
-    "@types/react-dom": "^18.2.7",
+    "nx": "^15.3.3",
+    "@types/node": "^18.0.6",
+    "chalk": "^5.0.1",
+    "fs-extra": "^10.1.0",
+    "glob": "^8.0.1",
     "typescript": "^5.2.2",
     "vite": "^4.4.9"
-  },
-  "peerDependencies": {
-    "react-dom": "^17.0.2"
   }
 }

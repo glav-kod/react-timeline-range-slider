@@ -1,7 +1,8 @@
 import React from "react";
+import TimelineInterval from "../types/timeline-interval";
+import TimeOnly from "../types/time-only";
 
 type Props = {
-  error: boolean,
   domain: [number, number],
   handle: {
     id: string,
@@ -9,23 +10,34 @@ type Props = {
     percent?: number
   },
   getHandleProps: (id: string) => React.DOMAttributes<HTMLDivElement>,
-  disabled?: boolean
+  currentInterval: TimelineInterval
 }
 
 export default function Handle(props: Props) {
   const {
-    error,
     domain: [min, max],
     handle: {
       id,
       value,
       percent = 0
     },
-    disabled = false,
-    getHandleProps
+    getHandleProps,
+    currentInterval
   } = props;
 
   const leftPosition = `${percent}%`;
+
+  const timeOnly = TimeOnly.FromSeconds(value);
+
+  const isLeft = currentInterval.start.seconds === timeOnly.seconds;
+
+  const tickLabelStyle: React.CSSProperties = {};
+
+  if (isLeft) {
+    tickLabelStyle.left = "-250%";
+  } else {
+    tickLabelStyle.left = "350%";
+  }
 
   return (
     <>
@@ -35,10 +47,13 @@ export default function Handle(props: Props) {
         aria-valuemin={min}
         aria-valuemax={max}
         aria-valuenow={value}
-        className={`react_time_range__handle_container${disabled ? "__disabled" : ""}`}
+        className="react_time_range__handle_container"
         style={{left: leftPosition}}
       >
-        <div className={`react_time_range__handle_marker${error ? "__error" : ""}`}/>
+        <div className="react_time_range__handle_marker"/>
+        <div className="react_time_range__tick_label" style={tickLabelStyle}>
+          {timeOnly.timeString}
+        </div>
       </div>
     </>
   );
