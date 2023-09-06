@@ -11,7 +11,7 @@ function secondsToHHmm(seconds: number): string {
 function timeStringToSeconds(timeString: string): number {
   const [hours, minutes] = timeString.split(":").map(Number);
 
-  if (isNaN(hours) || isNaN(minutes) || hours < 0 || hours > 23 || minutes < 0 || minutes > 59) {
+  if (isNaN(hours) || isNaN(minutes) || hours < 0 || hours > 24 || minutes < 0 || minutes > 59) {
     throw new Error(`Value is in invalid format: ${timeString}`);
   }
 
