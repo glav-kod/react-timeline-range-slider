@@ -8,6 +8,7 @@ import Handle from "./components/handle";
 
 import "./styles/index.css";
 import TimelineInterval from "./types/timeline-interval";
+import domain from "./constants/domain";
 
 export {
   TimelineInterval
@@ -23,58 +24,36 @@ type Props = {
    * Callback function to handle changes to the selected interval
    * @param interval - The updated TimelineInterval
    */
-  onChangeCallback: (interval: TimelineInterval) => void
+  onChange: (interval: TimelineInterval) => void,
+
+  /**
+   * Callback function to handle live updates to the selected interval
+   * @param interval - The updated TimelineInterval
+   */
+  onUpdate?: (interval: TimelineInterval) => void
 }
-
-const domain = {
-  /**
-   * Start of interval in seconds
-   */
-  start: 0,
-
-  /**
-   * End of interval in seconds
-   */
-  end: 86_400,
-
-  /**
-   * The step value for the slider in seconds.
-   */
-  step: 1800,
-  toArray: function (): [number, number] {
-    return [
-      this.start,
-      this.end
-    ];
-  },
-  getTicks: function () {
-    const result = [];
-    for (let i = this.start; i <= this.end; i += this.step) {
-      result.push(i);
-    }
-
-    return result;
-  }
-};
 
 export default function TimeRange(props: Props) {
   const {
-    selectedInterval,
-    onChangeCallback
+    selectedInterval
   } = props;
 
   const [updatedInterval, setUpdatedInterval] = useState<TimelineInterval>(selectedInterval);
 
-  function onChange(values: ReadonlyArray<number>) {
+  function handleChange(values: ReadonlyArray<number>) {
     const formattedNewTime = TimelineInterval.FromArray(values);
 
-    onChangeCallback(formattedNewTime);
+    props.onChange(formattedNewTime);
   }
 
-  function onUpdate(values: ReadonlyArray<number>) {
+  function handleUpdate(values: ReadonlyArray<number>) {
     const interval = TimelineInterval.FromArray(values);
 
     setUpdatedInterval(interval);
+
+    if (props.onUpdate) {
+      props.onUpdate(interval);
+    }
   }
 
   return (
@@ -83,8 +62,8 @@ export default function TimeRange(props: Props) {
         mode={3}
         step={domain.step}
         domain={domain.toArray()}
-        onUpdate={onUpdate}
-        onChange={onChange}
+        onUpdate={handleUpdate}
+        onChange={handleChange}
         values={[
           selectedInterval.start.seconds,
           selectedInterval.end.seconds

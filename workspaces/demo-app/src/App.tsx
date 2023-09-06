@@ -7,14 +7,14 @@ const initialInterval = TimelineInterval.FromString("00:00", "24:00");
 function App() {
   const [selectedInterval, setSelectedInterval] = useState<TimelineInterval>(initialInterval);
 
-  function onChangeCallback(selectedInterval: TimelineInterval) {
+  function handleChange(selectedInterval: TimelineInterval) {
     setSelectedInterval(selectedInterval);
   }
 
   return (
     <TimeRange
       selectedInterval={selectedInterval}
-      onChangeCallback={onChangeCallback}
+      onChange={handleChange}
     />
   );
 }

@@ -1,12 +1,19 @@
 import TimeOnly from "./time-only";
+import domain from "../constants/domain";
 
 export default class TimelineInterval {
   public readonly start: TimeOnly;
   public readonly end: TimeOnly;
+  public readonly isAroundTheClock: boolean;
 
   private constructor(start: TimeOnly, end: TimeOnly) {
     this.start = start;
     this.end = end;
+
+    this.isAroundTheClock = (
+      start.seconds === domain.startSeconds
+      && end.seconds === domain.endSeconds
+    );
   }
 
   public static FromString(start: string, end: string): TimelineInterval {
