@@ -1,7 +1,7 @@
 {
   "name": "@glav-kod/react-timeline-range-slider",
   "private": false,
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Time Slider component for React",
   "author": "GlavKod",
   "main": "src/index.tsx",
@@ -20,7 +20,9 @@
     "time-picker",
     "react-slider",
     "range-slider",
-    "range"
+    "range",
+    "typescript-react-slider",
+    "typescript-range-slider"
   ],
   "scripts": {
     "build": "tsc && vite build"
@@ -38,16 +40,13 @@
     ]
   },
   "dependencies": {
-    "react": "^17.0.2",
-    "d3-scale": "^4.0.2",
-    "date-fns": "^2.29.3",
     "react-compound-slider": "^3.3.1"
   },
   "devDependencies": {
-    "@types/d3-scale": "^4.0.4",
     "@types/node": "^20.5.7",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
+    "react": "^17.0.2",
     "typescript": "^5.2.2",
     "vite": "^4.4.9"
   },

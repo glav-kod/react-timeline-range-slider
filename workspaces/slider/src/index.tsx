@@ -18,6 +18,11 @@ type Props = {
    * Selected interval inside the timeline
    */
   selectedInterval: TimelineInterval,
+
+  /**
+   * Callback function to handle changes to the selected interval
+   * @param interval - The updated TimelineInterval
+   */
   onChangeCallback: (interval: TimelineInterval) => void
 }
 

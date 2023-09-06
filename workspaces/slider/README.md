@@ -1,4 +1,4 @@
-### React timeline range slider
+### Typescript react timeline range slider
 
 ![demo png](https://github.com/glav-kod/react-timeline-range-slider/blob/main/demo.png)
 
@@ -8,14 +8,24 @@
 
 ### Props
 
-| Prop             | Type     | Default | Description                           |
-|------------------|----------|---------|---------------------------------------|
-| selectedInterval | Object   |         | Selected interval inside the timeline |
-| onChangeCallback | function |         |                                       |
+```typescript
+type Props = {
+    /**
+     * Selected interval inside the timeline
+     */
+    selectedInterval: TimelineInterval,
+
+    /**
+     * Callback function to handle changes to the selected interval
+     * @param interval - The updated TimelineInterval
+     */
+    onChangeCallback: (interval: TimelineInterval) => void
+}
+```
 
 ### Example
 
-```javascript
+```tsx
 import React, {useState} from "react";
 import TimeRange, {TimelineInterval} from "@glav-kod/react-timeline-range-slider";
 import "./App.css";
@@ -39,3 +49,13 @@ function App() {
 
 export default App;
 ```
+
+## Feature Requests
+
+If you have any ideas for new features or improvements for this library,
+we welcome your input!
+Please feel free to create a new issue on
+[our GitHub repository](https://github.com/glav-kod/react-timeline-range-slider). We appreciate your feedback and will consider your suggestions
+for future updates.
+
+Thank you for helping us make this library even better!

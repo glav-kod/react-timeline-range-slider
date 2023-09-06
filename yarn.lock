@@ -362,6 +362,16 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.48.0.tgz#642633964e217905436033a2bd08bf322849b7fb"
   integrity sha512-ZSjtmelB7IJfWD2Fvb7+Z+ChTIKWq6kjda95fLcQKNS5aheVHn4IkfgRQE3sIIzTcSLwLcLZUD9UBt+V7+h+Pw==
 
+"@glav-kod/react-timeline-range-slider@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@glav-kod/react-timeline-range-slider/-/react-timeline-range-slider-3.0.0.tgz#e6f15cc230f46aeed5985b349041c146dc73f3c6"
+  integrity sha512-OGq6PPh+FRzxic6FUUqvTm0nrwu4cQ/mpB0+Sa7RgSP8Cnc26drQR5SeBmOZR8OFu+lInhav0btd30GtrrjCgQ==
+  dependencies:
+    d3-scale "^4.0.2"
+    date-fns "^2.29.3"
+    react "^17.0.2"
+    react-compound-slider "^3.3.1"
+
 "@humanwhocodes/config-array@^0.11.10":
   version "0.11.11"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.11.tgz#88a04c570dbbc7dd943e4712429c3df09bc32844"
@@ -500,18 +510,6 @@
   dependencies:
     node-addon-api "^3.2.1"
     node-gyp-build "^4.3.0"
-
-"@types/d3-scale@^4.0.4":
-  version "4.0.4"
-  resolved "https://registry.yarnpkg.com/@types/d3-scale/-/d3-scale-4.0.4.tgz#3c5e2263eea5a3670cd91043b9f4d150a94c43f1"
-  integrity sha512-eq1ZeTj0yr72L8MQk6N6heP603ubnywSDRfNpi5enouR112HzGLS6RIvExCzZTraFF4HdzNpJMwA/zGiMoHUUw==
-  dependencies:
-    "@types/d3-time" "*"
-
-"@types/d3-time@*":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@types/d3-time/-/d3-time-3.0.0.tgz#e1ac0f3e9e195135361fa1a1d62f795d87e6e819"
-  integrity sha512-sZLCdHvBUcNby1cB6Fd3ZBrABbjz3v1Vm90nysCQ6Vt7vd6e/h9Lt7SiJUoEX0l4Dzc7P5llKyhqSi1ycSf1Hg==
 
 "@types/json-schema@^7.0.12":
   version "7.0.12"
