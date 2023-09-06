@@ -1,7 +1,8 @@
 demo.gif
 demo.png
 README.md
-dist/
+!dist/
+src/
 .editorconfig
 vite.config.ts
 tsconfig.json

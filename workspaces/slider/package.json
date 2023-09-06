@@ -1,10 +1,9 @@
 {
   "name": "@glav-kod/react-timeline-range-slider",
   "private": false,
-  "version": "3.0.9",
+  "version": "3.0.12",
   "description": "Time Slider component for React",
   "author": "GlavKod",
-  "main": "src/index.tsx",
   "license": "MIT",
   "homepage": "https://github.com/glav-kod/react-timeline-range-slider/tree/main/workspaces/slider",
   "repository": {
@@ -23,8 +22,17 @@
     "typescript-react-slider",
     "typescript-range-slider"
   ],
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js"
+    },
+    "./style.css": {
+      "import": "./dist/style.css"
+    }
+  },
   "scripts": {
-    "build": "tsc && vite build"
+    "build": "tsc && vite build && tsc -p tsconfig.declarations.json"
   },
   "browserslist": {
     "production": [
