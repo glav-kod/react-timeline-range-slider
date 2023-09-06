@@ -21,8 +21,8 @@ const domain = {
     ];
   },
 
-  getTicks: function () {
-    const result = [];
+  getTicks: function (): number[] {
+    const result: number[] = [];
     for (let i = this.startSeconds; i <= this.endSeconds; i += this.step) {
       result.push(i);
     }
