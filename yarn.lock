@@ -1850,10 +1850,10 @@ queue-microtask@^1.2.2:
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
-react-compound-slider@^3.3.1:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/react-compound-slider/-/react-compound-slider-3.4.0.tgz#0367befe1367bb7968b38d0cbf07db6192b3c57e"
-  integrity sha512-KSje/rB0xSvvcb7YV0+82hkiXTV5ljSS7axKrNiXLf9AEO+rrr1Xq4MJWA+6v030YNNo/RoSoEB6D6fnoy+8ng==
+react-compound-slider@3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/react-compound-slider/-/react-compound-slider-3.3.0.tgz#d2a66e796d91592c61fd743aa7217bfa406d3186"
+  integrity sha512-WnjyEp8Gbn+6sCbQYgjjBJaS79uuXrS8twJj1EE52/BvaEDuXrkTEab71p9VOyPPktkvngd03BPfXV7jRTsoAw==
   dependencies:
     "@babel/runtime" "^7.12.5"
     d3-array "^2.8.0"
