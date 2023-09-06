@@ -10,7 +10,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@glav-kod/react-timeline-range-slider": "3.0.8"
+    "@glav-kod/react-timeline-range-slider": "3.0.9"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
